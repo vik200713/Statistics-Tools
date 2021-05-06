@@ -51,5 +51,4 @@ for a in unprocessed_data:
     match = re.search(pattern, a)
     freq.update({f"{match.group(1)}-{match.group(2)}":float(match.group(3))})
 
-print(freq)
 print("%.2f" % float(Mean(freq).__repr__()))
