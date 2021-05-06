@@ -8,8 +8,8 @@ Ex:\
 200-300: 78\
 300-400: 69\
 <br />
-Provide input as:\
+Provide input for Mean.py as:\
 ```100-200=50,200-300=78,300-400=69```\
-Output will be:\
+Output for Mean.py will be:\
 259.64\
 Feel free to point out issues and raise it.
