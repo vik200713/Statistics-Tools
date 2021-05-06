@@ -10,4 +10,4 @@ Provide input as:\
 100-200=50,200-300=78,300-400=69\
 Output will be:\
 259.64\
-Feel free to point out issues and raise it.\
+Feel free to point out issues and raise it.
