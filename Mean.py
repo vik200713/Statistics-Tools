@@ -44,11 +44,13 @@ class Mean:
 
 
 unprocessed_data = input("Enter the data in given format CL1-CL2=f,CL2-CL3=f1 eg:(100-200=40,200-300=10): ").split(',')
-print(unprocessed_data)
 
 for a in unprocessed_data:
     pattern = "^([0-9]*)-([0-9]*)=([0-9]+)"
     match = re.search(pattern, a)
     freq.update({f"{match.group(1)}-{match.group(2)}":float(match.group(3))})
 
-print("%.2f" % float(Mean(freq).__repr__()))
+try:
+    print("%.2f" % float(Mean(freq).__repr__()))
+except AttributeError:
+    print("Oops you left your input blank.")
