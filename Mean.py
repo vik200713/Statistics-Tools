@@ -54,4 +54,4 @@ try:
     get_and_process_input()
     print(f"Your Mean for \n{freq} is:\n" + "%.2f" % float(Mean(freq).__repr__()))
 except AttributeError:
-    print("Oops you have entered the wrong type of input.")
+    print("Oops your type of input is wrong, try again.")
