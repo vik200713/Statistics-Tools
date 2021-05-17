@@ -46,7 +46,7 @@ def get_and_process_input():
     unprocessed_data = input("Enter the data in given format CL1-CL2=f,CL2-CL3=f1 eg:(100-200=40,200-300=10): ").split(',')
 
     for a in unprocessed_data:
-        pattern = "^([0-9]*)-([0-9]*)=([0-9]+)"
+        pattern = "^([0-9]*)-([0-9]*)=(\d*\.?\d*|[0-9]+)$"
         match = re.search(pattern, a)
         freq.update({f"{match.group(1)}-{match.group(2)}":float(match.group(3))})
 
