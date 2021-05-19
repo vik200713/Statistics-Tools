@@ -25,6 +25,7 @@ class Median:
         self.h = None
         self.index = None
 
+    @property
     def median(self):
         value_list = list(self.dictionary.values())
         self.n = sum(value_list)
@@ -39,6 +40,7 @@ class Median:
         self.cf = self.cf_list[self.index - 1]
         self.f = list(self.dictionary.values())[self.index]
 
+    @property
     def l_and_h(self):
         key_list = list(self.dictionary.keys())
         median_class = key_list[self.index]
@@ -49,8 +51,8 @@ class Median:
         self.h = l1 - self.cl1
 
     def calculation(self):
-        self.median()
-        self.l_and_h()
+        self.median
+        self.l_and_h
         top = (self.n / 2) - self.cf
         fraction = top / self.f
         result = self.cl1 + (fraction * self.h)
