@@ -5,10 +5,7 @@ freq = {}
 
 def get_and_process_input():
     unprocessed_data = input("Enter the data in given format CL1-CL2=f,CL2-CL3=f1 eg:(100-200=40,200-300=10): ")
-    if unprocessed_data == 'dev':
-        split_unprocessed_data = ['100-200=10', '200-300=90', '300-400=60']
-    else:
-        split_unprocessed_data = unprocessed_data.split(',')
+    split_unprocessed_data = unprocessed_data.split(',')
     for a in split_unprocessed_data:
         pattern = r"^([0-9]*)-([0-9]*)=(\d*\.?\d*|[0-9]+)$"
         match = re.search(pattern, a)

@@ -4,10 +4,7 @@ freq = {}
 
 def get_and_process_input():
     unprocessed_data = input("Enter the data in given format CL1-CL2=f,CL2-CL3=f1 eg:(100-200=40,200-300=10): ")
-    if unprocessed_data == 'dev':
-        split_unprocessed_data = ['100-200=10', '200-300=90', '300-400=60']
-    else:
-        split_unprocessed_data = unprocessed_data.split(',')
+    split_unprocessed_data = unprocessed_data.split(',')
     for a in split_unprocessed_data:
         pattern = r"^([0-9]*)-([0-9]*)=(\d*\.?\d*|[0-9]+)$"
         match = re.search(pattern, a)
@@ -25,7 +22,6 @@ class Median:
         self.h = None
         self.index = None
 
-    @property
     def median(self):
         value_list = list(self.dictionary.values())
         self.n = sum(value_list)
@@ -40,7 +36,6 @@ class Median:
         self.cf = self.cf_list[self.index - 1]
         self.f = list(self.dictionary.values())[self.index]
 
-    @property
     def l_and_h(self):
         key_list = list(self.dictionary.keys())
         median_class = key_list[self.index]
@@ -51,8 +46,8 @@ class Median:
         self.h = l1 - self.cl1
 
     def calculation(self):
-        self.median
-        self.l_and_h
+        self.median()
+        self.l_and_h()
         top = (self.n / 2) - self.cf
         fraction = top / self.f
         result = self.cl1 + (fraction * self.h)
@@ -61,7 +56,7 @@ class Median:
 
 try:
     get_and_process_input()
-    print(f"Your Mode for \n{freq} is:\n" + "%.2f" % float(Median(freq).calculation()))
+    print(f"Your Median for \n{freq} is:\n" + "%.2f" % float(Median(freq).calculation()))
 except AttributeError:
     print('\n')
     print("Oops your type of input is wrong, try again.")
